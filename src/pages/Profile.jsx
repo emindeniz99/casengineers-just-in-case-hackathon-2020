@@ -129,7 +129,7 @@ const Profile = () => {
 
 			<h1>ALDIĞIM YORUMLAR</h1>
 			{comments.map((i) => (
-				<p key={i.id}> {i.content} </p>
+				<p key={i.id}> {i.content} /  {i.from}</p>
 			))}
 		</div>
 	)
