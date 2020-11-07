@@ -12,6 +12,7 @@ import {
 
 import Profile from "./pages/Profile"
 import Timeline from "./pages/Timeline"
+import Interview from "./pages/Interview"
 
 function App() {
 	return (
@@ -28,10 +29,17 @@ function App() {
 					<Nav.Link as={Link} to="/profile">
 						Profile
 					</Nav.Link>
+
+					<Nav.Link as={Link} to="/interview">
+						Interview
+					</Nav.Link>
 				</Navbar>
 
 				<Container>
 					<Switch>
+						<Route path="/interview">
+							<Interview />
+						</Route>
 						<Route path="/profile">
 							<Profile />
 						</Route>
@@ -42,6 +50,7 @@ function App() {
 						<Route path="/">
 							<Redirect to="/timeline" />
 						</Route>
+						
 					</Switch>
 				</Container>
 			</div>
