@@ -1,6 +1,7 @@
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
+import { Container, Nav, Navbar } from "react-bootstrap"
 import {
 	Link,
 	Redirect,
@@ -16,31 +17,33 @@ function App() {
 	return (
 		<Router>
 			<div>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/timeline">Timeline</Link>
-						</li>
-						<li>
-							<Link to="/profile">Profile</Link>
-						</li>
-					</ul>
-				</nav>
+				<Navbar bg="light" expand="lg">
+					<Navbar.Brand as={Link} to="/">
+						Casengineers
+					</Navbar.Brand>
+					<Nav.Link as={Link} to="/timeline">
+						Timeline
+					</Nav.Link>
 
-				{/* A <Switch> looks through its children <Route>s and
-        renders the first one that matches the current URL. */}
-				<Switch>
-					<Route path="/profile">
-						<Profile />
-					</Route>
+					<Nav.Link as={Link} to="/profile">
+						Profile
+					</Nav.Link>
+				</Navbar>
 
-					<Route path="/timeline">
-						<Timeline />
-					</Route>
-					<Route path="/">
-						<Redirect to="/timeline" />
-					</Route>
-				</Switch>
+				<Container>
+					<Switch>
+						<Route path="/profile">
+							<Profile />
+						</Route>
+
+						<Route path="/timeline">
+							<Timeline />
+						</Route>
+						<Route path="/">
+							<Redirect to="/timeline" />
+						</Route>
+					</Switch>
+				</Container>
 			</div>
 		</Router>
 	)
