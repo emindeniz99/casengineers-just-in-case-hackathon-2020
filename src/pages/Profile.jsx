@@ -155,18 +155,18 @@ const Profile = () => {
 			<ButtonGroup aria-label="Basic example" style={{marginBottom: "20px"}}>
 					<ListGroup variant="flush" style={{marginBottom: "20px"}}>
 						<ListGroup.Item>
-							<Button variant="warning" onClick={submit} style={{marginRight: "20px"}}>
+							<Button variant="warning" onClick={submit} style={{marginRight: "20px", marginBottom: "20px"}}>
 								Herkesle paylaş
 							</Button>
-							<Button variant="success" onClick={submit}>
+							<Button variant="success" onClick={submit} style={{marginRight: "20px", marginBottom: "20px"}}>
 								Profesyonellerle paylaş
 							</Button>
 						</ListGroup.Item>
 						<ListGroup.Item>
-							<Button variant="danger" onClick={openAlertik}  style={{marginRight: "20px"}} >
+							<Button variant="danger" onClick={openAlertik}  style={{marginRight: "20px", marginBottom: "20px"}} >
 								İK'dan Mülakat Simülasyonu Talep Et
 							</Button>
-							<Button variant="danger" onClick={openAlertpro} >
+							<Button variant="danger" onClick={openAlertpro}  style={{marginRight: "20px", marginBottom: "20px"}} >
 								Profesyonellerden Teknik Mülakat Simülasyonu Talep Et
 							</Button>
 						</ListGroup.Item>	
