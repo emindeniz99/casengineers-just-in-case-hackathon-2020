@@ -232,17 +232,13 @@ const CVCard = ({ i }: { i: Resume }) => {
     <Grid item xs={12} lg={6}>
       <Card style={{ height: "100%" }}>
         {i.objectType === "application/pdf" && (
-          <object
-            data={i.cvUrl}
-            type="application/pdf"
+          <embed
+            src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURIComponent(
+              i.cvUrl
+            )}`}
             width="100%"
             height="700px"
-          >
-            <p>
-              Alternative text - include a link{" "}
-              <a href={i.cvUrl}>to the PDF!</a>
-            </p>
-          </object>
+          />
         )}
 
         {i.objectType.includes("image") && (
