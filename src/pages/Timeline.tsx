@@ -108,7 +108,13 @@ const Timeline = () => {
 
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={2}
+        style={{
+          marginBottom: "5rem",
+        }}
+      >
         {profileCards.map((i, index) => (
           <CVCard i={i} key={index} />
         ))}
