@@ -58,7 +58,7 @@ const Timeline = () => {
   const [file, setfile] = useState<File>(undefined);
 
   const [authorName, _setauthorName] = useState(
-    window.localStorage.getItem("authorName")
+    window.localStorage.getItem("authorName") || ""
   );
 
   const setAuthorName = (name: string) => {
@@ -93,9 +93,9 @@ const Timeline = () => {
             seturl(fireBaseUrl);
 
             await firestore.collection("resumes").add({
-              cvUrl: fireBaseUrl,
-              objectType: file.type,
-              owner: authorName,
+              cvUrl: fireBaseUrl || "",
+              objectType: file.type || "",
+              owner: authorName || "",
               time: new Date().valueOf(),
             });
             loadResumes();
@@ -193,7 +193,7 @@ const CVCard = ({ i }: { i: Resume }) => {
   const [comments, setcomments] = useState<Comments[]>(undefined);
 
   const [authorName, _setauthorName] = useState(
-    window.localStorage.getItem("authorName")
+    window.localStorage.getItem("authorName") || ""
   );
 
   const setAuthorName = (name: string) => {
@@ -326,11 +326,11 @@ const CVCard = ({ i }: { i: Resume }) => {
                   .doc(i.id)
                   .collection("comments")
                   .add({
-                    content: comment,
+                    content: comment || "",
 
-                    from: authorName,
+                    from: authorName || "",
                     time: new Date().valueOf(),
-                    point,
+                    point: Math.floor(point) || 0,
                   });
                 loadComments();
                 setcomment("");
